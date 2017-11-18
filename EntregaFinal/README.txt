@@ -1,0 +1,1 @@
+Os ficheiros com extensão ".xml" devem ser abertos através do website draw.io
