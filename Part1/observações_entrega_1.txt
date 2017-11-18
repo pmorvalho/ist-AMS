@@ -1,0 +1,13 @@
+Vista Organizacional:
+
+apenas ter colaboracoes que implicam mais de 1 role. AS que têm apenas 1 role podem ser eliminadas e subsituidas por uma nota ou podem ser indicadas no role original.
+
+Vista Cliente/Partner:
+
+Ligar os roles aos servicos
+
+Vista aplicacional/tecnologica:
+
+Manter os SO's
+Fazer mais servicos (desponibilizacao do website, acesso às apps etc.) e liga-los directamente as VM's e ais MyTguide API's/ sites
+Adicionar server applications à VM1 e VM2
