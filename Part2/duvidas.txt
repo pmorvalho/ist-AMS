@@ -1,0 +1,34 @@
+﻿P1 e P2
+Passo para registar a informacao
+
+Estado do registo do parceiro - torna-lo visivel
+
+Se tasks(estados)
+devemos parar o contador de horas na recepcao do token de activacao
+
+Até ponto é que temos de descriminar as informacoes recebidas no email de agradecimento ao parceiro
+
+GATEWAYBANK RESPONDE?
+
+-- P4
+- gateway está confuso
+- devemos libertar várias vezes? gateway com muita coisa? ou como temos?
+
+UML
+
+Devemos por a ligacao entre cliente e Reservar Hotspot
+
+
+Servico de consulta de movimentos e saldo da conta de parceiro
+
+
+Herança entre os actores:
+Cliente anónimo 
+Parceiro anónimo
+
+Se alguem que nao tem a iniciativa no caso de uso deve estar ligado ao mesmo (caso de uso)
+Por exemplo: na Avaliacao do Parceiro por parte do Cliente, a reserva da visita que deve ser aprovada pelo parceiro, debito e credito de contas
+
+Só pesquisar no template é uma excepcao ou um caminho alternativo
+
+Mensagens na coreografia pouco explicitas, ver exemplo deles

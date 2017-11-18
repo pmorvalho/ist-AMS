@@ -1,0 +1,26 @@
+Use Case Template
+
+Name: Reservar Visita
+
+Summary: O Cliente consulta as visitas disponiveis, escolhendo uma delas pagando a taxa de reserva e escolhendo o numero de pessoas. De seguida confirma a reserva.
+
+Rationale: NÃO SEI
+
+Users: Cliente (registado)
+
+Preconditions: Ser um cliente registado. Ter a app aberta.
+
+Basic Course of Events: 
+	1. Pesquisar e selecionar uma visita.
+	2. Escolher o número de pessoas e aceitar o pagamento da taxa de reserva
+	3. Conclui a reserva aguardando confirmação
+
+
+Alternative Paths:
+	1. No passo 2 escolhe tambem reserva um Hotspot
+
+Excepções:
+	1. Desistir do processo no ponto 1 e 2. O processo de reservar visita termina.
+	2. 
+
+Posconditions: A reserva fica no estado pendente.

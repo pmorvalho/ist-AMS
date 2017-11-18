@@ -1,0 +1,73 @@
+Use Case Template
+
+Name: Reservar Visita
+
+Summary: O Cliente consulta as visitas disponiveis, escolhendo uma delas pagando a taxa de reserva e escolhendo o numero de pessoas. De seguida confirma a reserva.
+
+Rationale: Um cliente da app MYTGuide tem como intuito principal planear uma visita guiada. Assim, surge a necessidade de existir um caso de uso (com todo um processo associado) que envolve a Reserva de uma Visita, registada na plataforma MYTGuide, que organiza esta visita com o parceiro (e com quaisquer outras entidades necessárias). 
+
+Users: Cliente (registado)
+
+Preconditions: Ser um cliente registado. Ter a app aberta.
+
+Basic Course of Events: 
+	1. O cliente pesquisa e consulta a disponibilidade de visitas guiadas, por critérios tais como área geográfica (e.g., distrito e concelho), período de datas, meio de realizar a visita (e.g., a pé, automóvel, bicicleta), e o guia turístico
+	2. O cliente escolhe uma visita disponível, indicando o número de pessoas que vão consigo e aceitando o pagamento de uma taxa de reserva, submetendo a reserva.
+	3. A plataforma envia um SMS (e uma not ificação para a app) para o parceiro selecionado e solicita-lhe a sua confirmação.
+	4. O parceiro confirma no período de 4 horas (via sua app)
+	5. A plataforma debita (via Gateway Bancária) da conta do cliente o valor da taxa de reserva e envia uma notificação de confirmação da reserva para a app do cliente
+
+
+Alternative Paths:
+	1. No passo 2 também reserva um Hotspot. Esta escolha envolve apenas este pormenor, mas irá ser mencionada na notificação enviada ao parceiro, e o Técnico do DAP será também notificado, para que reserve um "hotspot".
+	2. No passo 4 o parceiro não confirma a reserva no período de 4 horas. a plataforma cancela essa reserva e envia uma notificação para a app do cliente com essa informação.   
+
+Excepções:
+	1. Desistir do processo no ponto 1 (pesquisar sem reservar) e 2. O processo de reservar visita termina.
+
+Posconditions: A reserva fica registada no sitema no estado pendente.
+
+
+
+-------------------------------------------------------------
+
+Name: Registar-se como parceiro
+
+Summary: O utilizador abre a app pela primeira vez, preenche o formulário de informações básicas, aceita o seu contracto, fornece informações mais extensivas e conclui o seu registo no sistema como parceiro.
+
+Rationale: Qualquer utilizador anónimo que queira ser parceiro da plataforma MYTGuide tem de o poder fazer através da sua app de forma eficiente. Assim, surge a necessidade de existir um processo associado a registar-se como Parceiro, transitando de anónimo para parceiro fidedigno do sistema. Este processo envolve o registo das informações do mesmo na plataforma, e um acordo entre os representantes do MyTGuide e o utilizador candidato a parceiro, de forma a tornar esta necessidade num processo eficaz.
+
+Users: Utilizador anónimo
+
+Preconditions:
+Não estar registado na app. Abrir a app pela primeira vez. 
+
+Basic course of events:
+	(1. Ao abrir a app, esta indica ao parceiro um formulário para fazer o seu pré-registo, devendo indicar o nome, morada postal, email, nº de telemóvel e NIB (Número de Identificação Bancário). 
+	2. O parceiro preenche e envia o formulário.
+	3. A plataforma recebe o formulário.
+	4. A plataforma verifica se se o nome e email indicado não estão associados a outro utilizador registado.
+	5. A plataforma verifica se o NIB indicado é válido(paratala plataformaenvia um pedidoàaplicação GatewayBank).
+	6. A plataforma regista a informação, produzindo um token de activação com validade de 8 horas que envia ao parceiro por SMS.
+	7. O parceiro recebe o token, intronduzindo-o no formulário e activando o pré-registo. Passa a ser considerado um parceiro com pré-registo na plataforma.)
+	Os passos 1-7 modelam a sequência de eventos do caso de uso "Validar Informação básica e bancária", que tem uma relação "include" com este caso de uso, pelo que está incluído no seu procedimento usual.
+	8. A plataforma envia um email ao cliente agredecendo o pré-registo com informações sobre o modelo de contrato de serviço entre a empresa e o parceiro, e instruções necessárias para este submeter na plataforma mais informações sobre as suas características (habilitações académicas, certificados profissionais no sector do turismo, e descrição da suaexperiência).
+	9. O parceiro aceita o contracto e submete as informações solicitadas no passo, passando a sua conta para o estado pendente.
+	10. O técnico do DAP analisa esta informação.
+	11. O técnico do DAP aprova o registo do parceiro .
+	12. A plataforma envia um email ao parceiro com a confirmação do seu registo.
+
+Alternative Paths:
+	1. No passo 10, o técnico do DAP pode contactar diretamente, via telefone ou email, o candidato a parceiro, caso necessite de mais informação.
+	2. No passo 11, se o técnico do DAP rejeitar o registo do parceiro,  o Coordenador do DAP é notificado pela plataforma, via email. Posteriormente, o Coordenador do DAP regista na plataforma a sua apreciação final, que pode ser de rejeição final ou aprovação. O parceiro é registado no sistema como reprovado ou aprovado, conforme.
+	3. No caminho alternativo 2, o coordenador do DAP pode ainda comunicar directamente com o candidato a parceiro para esclarecer qualquer situação que tenha justificado a apreciação negativa. 
+	4. Nos passos 4 e 5, se a informação for rejeitada (no processo de verificação), o registo termina.
+	5. No passo 6, se a validade do token expirar, o registo termina.
+	6. No passo 9, se o parceiro rejeitar o contracto, o registo termina.
+	7. Em qualquer um dos passos podemos desistir do processo, e, consequentemente, o registo termina.
+
+Exceptions:
+	(não há)
+
+Postconditions:
+O parceiro fica registado no sistema no estado aprovado. 

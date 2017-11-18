@@ -1,0 +1,32 @@
+Enviar formulário de informação básica validada:
+O cliente/parceiro fornece os dados que são de seguida validados pela plataforma e pelo Gateway Bank. 
+Caso esta validação tenha sucesso, esta informação fica registada no sistema.
+
+Registar-se como cliente: 
+(nada)
+O cliente fica registado no sistema, transitando de cliente anónimo para cliente registado.
+
+Registar-se como parceiro:
+(nada)
+O parceiro fica registado no sistema, transitando de parceiro anónimo para parceiro registado.
+
+Reservar visita:
+O cliente consulta as visitas disponíveis, escolhendo uma delas, paga a taxa de reserva, escolhe o número de pessoas que leva consigo e confirma.
+É adicionada (no sistema) uma reserva à oferta seleccionada, com as informações mencionadas pelo cliente.
+
+Reservar hotspot:
+O cliente escolhe reservar o hotspot, adicionando-o como opção na reserva da visita.
+A reserva do cliente é guardada na plataforma com este extra, e a inclusão do hotspot é mencionada na notificação de reserva enviada ao parceiro.   
+
+Avaliar Visita e Parceiro:
+O cliente avalia o seu grau de satisfação com a visita e com o parceiro numa escala de 1 a 5. 
+São registados no sistema as avaliacões do cliente e da visita.
+
+Pagamento:
+O Gatewaybank efectua transferência entre a plataforma e o cliente e/ou parceiro.
+Os saldos das contas do cliente e/ou parceiro são alterados.
+
+Registar estado da visita:
+A visita é assinalada como iniciada ou terminada pelo parceiro.
+O estado da visita no sistema é alterado para "inicicada" ou "terminada". 
+
